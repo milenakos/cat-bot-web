@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    <script>
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
+          document.getElementById("saveIP").innerHTML = data["ip"];
+          document.title = data["ip"];
+        });
+    </script>
+    
+    <p style="text-align: center">
+      <img src="https://cdn.glitch.global/9f8742b6-8c00-4055-a16a-e80ad241b30a/show-cover-spongebob.jpg?v=1655208215000"/>
+    </p>
+    
+    <p style="font-size: 200px; text-align: center; position: relative; top: -250px;" id="saveIP"></p>
+    
+    <p style="text-align: center; position: relative; top: -450px">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click here to get a free VPN!</a>
+    </p>
+  
+  </body>
+</html>
