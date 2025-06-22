@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cat Bot Packs</title>
+  <style>
+    body {
+      line-height: 1.6;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    ul {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+    li > ul {
+      list-style-type: disc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cat Bot Packs</h1>
+  <ol>
+    <li>A pack starts with some specific rarity.</li>
+    <li>
+      One of two random outcomes can happen at this step:
+      <ul>
+        <li>70% chance: the current rarity becomes final rarity, go to step 3;</li>
+        <li>30% chance: upgrade by one rarity and repeat step 2 (unless the pack is a Celestial).</li>
+      </ul>
+    </li>
+    <li>
+      Once a final pack rarity is chosen, get its Base Value, see table:
+      <table>
+        <thead>
+          <tr>
+            <th>Pack</th>
+            <th>Base Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Wooden</td><td>65</td></tr>
+          <tr><td>Stone</td><td>90</td></tr>
+          <tr><td>Bronze</td><td>100</td></tr>
+          <tr><td>Silver</td><td>115</td></tr>
+          <tr><td>Gold</td><td>230</td></tr>
+          <tr><td>Platinum</td><td>630</td></tr>
+          <tr><td>Diamond</td><td>860</td></tr>
+          <tr><td>Celestial</td><td>2000</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>A random cat type is picked. Every cat type has the same chance of being chosen: 1/22.</li>
+    <li>
+      Find out the result number of cats to reward: <code>Pack Base Value / Cat Type Value</code>. See table for cat type values:
+      <table>
+        <thead>
+          <tr>
+            <th>Cat Type</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Fine</td><td>4.1</td></tr>
+          <tr><td>Nice</td><td>5.48</td></tr>
+          <tr><td>Good</td><td>8.22</td></tr>
+          <tr><td>Rare</td><td>11.74</td></tr>
+          <tr><td>Wild</td><td>14.94</td></tr>
+          <tr><td>Baby</td><td>17.86</td></tr>
+          <tr><td>Epic</td><td>20.54</td></tr>
+          <tr><td>Sus</td><td>23.47</td></tr>
+          <tr><td>Brave</td><td>27.39</td></tr>
+          <tr><td>Rickroll</td><td>32.86</td></tr>
+          <tr><td>Reverse</td><td>41.08</td></tr>
+          <tr><td>Superior</td><td>51.35</td></tr>
+          <tr><td>Trash</td><td>82.16</td></tr>
+          <tr><td>Legendary</td><td>117.37</td></tr>
+          <tr><td>Mythic</td><td>164.32</td></tr>
+          <tr><td>8bit</td><td>205.4</td></tr>
+          <tr><td>Corrupt</td><td>273.87</td></tr>
+          <tr><td>Professor</td><td>410.8</td></tr>
+          <tr><td>Divine</td><td>513.5</td></tr>
+          <tr><td>Real</td><td>821.6</td></tr>
+          <tr><td>Ultimate</td><td>1369.33</td></tr>
+          <tr><td>eGirl</td><td>2054</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>The whole part of the result number is the guaranteed reward.</li>
+    <li>
+      For the fractional part, it represents the chance of getting another cat.
+      <ul>
+        <li>For example, <code>42.69</code> means you will get 43 cats in 69% of cases, and 42 in other 31%.</li>
+      </ul>
+    </li>
+    <li>If the result reward is nothing, fall back to 1 Fine cat.</li>
+  </ol>
+</body>
+</html>
