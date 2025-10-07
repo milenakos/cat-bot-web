@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/images/cat.ico">
+    <meta property="og:site_name" content="wow so shiny" />
+    <meta property="og:title" content="Cat Bot" />
+    <meta property="og:description" content="A cat has appeared! Catch it! Add Cat Hunt to your server with tons of cats, leaderboards, achievements, and much more!" />
+    <meta content="https://catbot.minkos.lol" property="og:url">
+    <meta content="https://wsrv.nl/?url=catbot.minkos.lol/images/cat.png" property="og:image">
+    <meta content="#6E593C" data-react-helmet="true" name="theme-color">
+    <title>Unsubscribe</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+        .copyable {
+            background-color: #dbd5ce;
+            border: 1px solid #6E593C;
+            padding: 10px;
+            display: inline-block;
+            font-family: monospace;
+        }
+        .message {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="message" id="message"></div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                server_id: params.get('server_id'),
+                server_name: params.get('server_name')
+            };
+        }
+
+        function displayMessage() {
+            const { server_id, server_name } = getQueryParams();
+            const messageDiv = document.getElementById('message');
+            if (server_id && server_name) {
+                messageDiv.innerHTML = `You can disable <b>${server_name} Cattlepass</b> reminders by saying <span class="copyable">disable ${server_id}</span> in Cat Bot DMs.<br><br>You can disable <b>all reminders</b> (including vote reminders) by saying <span class="copyable">disable all</span> in Cat Bot DMs.`;
+            } else {
+                messageDiv.innerHTML = 'Please provide valid server_id and server_name in the query string.';
+            }
+        }
+
+        window.onload = displayMessage;
+    </script>
+</body>
+</html>
