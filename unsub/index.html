@@ -47,7 +47,7 @@
             const { server_id, server_name } = getQueryParams();
             const messageDiv = document.getElementById('message');
             if (server_id && server_name) {
-                messageDiv.innerHTML = `You can disable <b>${server_name} Cattlepass</b> reminders by saying <span class="copyable">disable ${server_id}</span> in Cat Bot DMs.<br><br>You can disable <b>all reminders</b> (including vote reminders) by saying <span class="copyable">disable all</span> in Cat Bot DMs.`;
+                messageDiv.innerHTML = `You can disable <b>Cattlepass reminders for ${server_name}</b> by saying <span class="copyable">disable ${server_id}</span> in Cat Bot DMs.<br><br>You can disable <b>all reminders</b> (including vote reminders) by saying <span class="copyable">disable all</span> in Cat Bot DMs.`;
             } else {
                 messageDiv.innerHTML = `You can disable <b>all reminders</b> (including vote reminders) by saying <span class="copyable">disable all</span> in Cat Bot DMs.`;
             }
